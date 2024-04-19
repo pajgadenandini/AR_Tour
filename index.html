@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual Campus Tour</title>
+  <link rel="icon" href="/images/logo.png">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="/images/logo.png" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="stylesheet" text="text/CSS"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" text="text/CSS"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><!--animate on scroll library-->
+</head>
+<style>
+  html {
+    scroll-behavior: smooth;
+
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .back-top-wrap {
+    position: fixed;
+    bottom: 5rem;
+    right: 1rem;
+    background-color: #d4e0de;
+    padding: 1rem 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    z-index: 100;
+  }
+
+  .back-top-wrap:hover {
+    background-color: #00a2ff;
+    color: #2477eb;
+  }
+
+  .back-top-wrap:hover .fas.fa-arrow-up {
+    color: white;
+  }
+
+  .fas.fa-arrow-up {
+    color: #00488F;
+    transition: 0.3s ease-in-out;
+  }
+  #Floorplan {
+      text-align: center;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .floorplan-heading h1 {
+      color: white;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .floorplan-instructions {
+      margin-top: 30px;
+    }
+
+    .floorplan-instructions ol {
+      text-align: left;
+      margin-left: 20px;
+    }
+
+    .floorplan-instructions ol li {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .floorplan-instructions .button-container {
+      margin-top: 30px;
+    }
+
+    .floorplan-instructions .button-container .button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #a5bac6;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .floorplan-instructions .button-container .button:hover {
+      background-color: #acb66d;
+    }
+</style>
+
+
+
+<body onload="myFunction()">
+  <div class="loading-wrapper">
+    <img src="./logo.png" id="loading" />
+  </div>
+
+  <!-- Back to top button -->
+  <div id="back-top-div" class="back-top-wrap">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+  <header>
+    <nav class="nav" id="nav">
+      <div>
+        <a class="navbar-brand" href="#!"> <img src="logo.png" alt="Logo" class="logo" /></a>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <ul class="links" id="navmenu">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#Floorplan">Floorplan </a></li>
+          <li><a href="html/contact.html">CONTACT US </a></li>
+        </ul>
+      </div>
+      <button class="login-button"><a href="html/login.html">SignUp / Login</a></button>
+      <div class="hamburger" id="ham">
+        <i class="cancel fa-solid fa-xmark"></i>
+
+        
+      </div>
+    </nav>
+    <div class="menu" id="menu">
+      <ul class="menu-link">
+        <li><a href="#">HOME</a></li>
+        
+        <li><a href="#Floorplan">Floorplan</a></li>
+        <li><a href="html/contact.html">CONTACT US </a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>AR Campus Tour</h1>
+      <div class="container">
+        <h3><span class="auto-type" style="font-size: 40px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"></a></span></h3>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <script>
+        var typed = new Typed(".auto-type", {
+          strings: ["Experience education's evolution firsthand with our Virtual Campus Tour powered by Augmented Reality. Explore limitless horizons, discover new realms of knowledge, and unlock the future of learning today."],
+          typeSpeed: 60,
+          backspeed: 60,
+          loop: true
+        })
+      </script>
+      <a href="#Floorplan" class="rainbow-button" alt="Explore"></a>
+    </div>
+
+  </header>
+
+  <section id="Floorplan" class="section-100">
+    <div class="floorplan-heading">
+      <h1>Explore our Campus</h1>
+    </div>
+    <div class="floorplan" id="floorplan">
+      
+      <div class="hero">
+        
+        <div class="button-container">
+          <div style="position: relative; width: 100%; height: 0; padding-top: 100.0000%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGCSLRywSA&#x2F;sPb5oxtJ4HBSTIE6IguU2Q&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGCSLRywSA&#x2F;sPb5oxtJ4HBSTIE6IguU2Q&#x2F;view?utm_content=DAGCSLRywSA&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">floor_plan_full</a>
+</div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGCSLRywSA&#x2F;sPb5oxtJ4HBSTIE6IguU2Q&#x2F;view?utm_content=DAGCSLRywSA&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Explore Floorplan</a> 
+          
+
+        </div>
+      </div>
+      <div class="floorplan-instructions">
+        <h3>How to Use the Floorplan</h3>
+        <ol>
+          <li>Click on the "Explore Floorplan" button above.</li>
+          <li>Click on any block to view its augmented view.</li>
+          <li>Scan the marker from your mobile phone.</li>
+          <li>The model will pop up with additional information.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+
+
+  
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h1 data-aos="flip-right">About Us</h1>
+    <div class="max-width">
+      <div data-aos="zoom-in" class="photo"><img src="./images/download (1).jpeg" alt="" height="300px" width="330px"></div>
+      <div class="about-content">
+        <p data-aos="fade-left" class="text-1"> Welcome to Our Vision: Where Reality and Imagination Converge. Our mission is to redefine the educational landscape by harnessing the power of augmented reality. Through our innovative approach, we invite you to explore our college campus like never before. Immerse yourself in augmented views that blend seamlessly with reality, offering a dynamic and engaging experience. Join us on this journey as we revolutionize education and pave the way for a new era of learning.</p>
+        
+      </div>
+    </div>
+    <h3><span style="color: rgb(91, 134, 150);">MEET THE CONTRIBUTORS</span></h3>
+
+    <div class="box">
+
+      <div data-aos="fade-up" ddata-aos-duration="800" class="card">
+        <img src="./images/nan2.jpg" alt="Nandini Pajgade" loading="lazy" height="400px" width="430px" >
+        <h5>Nandini Pajgade</h5>
+        <div class="pra">
+          
+          <a href="https://www.linkedin.com/in/nandini-pajgade-4a3351230/"><button>Let's Connect</button></a>
+        </div>
+      </div>
+      <div data-aos="fade-up" ddata-aos-duration="800" class="card">
+        <img src="./images/ganesh.jpeg" alt="Ganesh Dole" loading="lazy" >
+        <h5>Ganesh Dole</h5>
+        <div class="pra">
+          <a href="https://www.linkedin.com/in/ganeshdole"><button>Let's Connect</button></a>
+        </div>
+      </div>
+
+      
+      <div data-aos="fade-up" data-aos-duration="800" class="card">
+        <img src="./images/meg.jpg" alt="Megha" loading="lazy" >
+        <h5>Megha</h5>
+        <div class="pra">
+          
+          <a href="https://www.linkedin.com/in/megha-79a744231"><button>Let's Connect</button></a>
+        </div>
+      </div>
+      <div data-aos="fade-up" data-aos-duration="800" class="card">
+        <img src="./images/mug.jpg" alt="Mugdha Arvind" loading="lazy" >
+        <h5>Mugdha Arvind</h5>
+        <div class="pra">
+          
+          <a href="https://www.linkedin.com/in/mugdha-arvind-490a1b231"><button>Let's Connect</button></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+    
+  
+  
+   
+
+  <!-- footer start -->
+  <footer>
+    <div class="footer-container">
+      <!--logo and info column-->
+      <div class="col">
+        <!--logo insert-->
+        <img src="logo.png" alt="logo" class="footlogo" />
+        
+      </div>
+
+      <!--ADDRESS COLUMN-->
+
+      <div class="footer-side-col">
+        <div class="col">
+          <h3>
+            ADDRESS
+            <div class="underline"><span></span></div>
+          </h3>
+          <p>Maharashtra,India</p>
+          
+        </div>
+        <!--HOME COLUMN-->
+        <div class="col">
+          <h3>HOME</h3>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            
+          </ul>
+        </div>
+        
+        
+        <!--CONTACTS COLUMN-->
+        <div class="col">
+          <h3>
+           
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+
+    let preloader = document.querySelector(".loading-wrapper");
+    function myFunction() {
+      preloader.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+    let navbar = document.querySelector("#nav");
+    let navmenu = document.querySelector("#navmenu");
+
+    window.onscroll = function () {
+      if (window.pageYOffset >= navmenu.offsetTop) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    };
+
+    window.onscroll = () => {
+      if (window.scrollY > 100) {
+        navbar.classList.add('nav-active');
+      } else {
+        navbar.classList.remove('nav-active');
+      }
+    };
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./serviceworker.js')
+          .then((reg) => console.log('Success', reg.scope))
+          .catch((err) => console.log('Error', err))
+      })
+    }
+  </script>
+  <script src="js/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
